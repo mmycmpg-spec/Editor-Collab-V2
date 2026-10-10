@@ -23,6 +23,11 @@ jobs:
     steps:
       - uses: actions/checkout@v4
 
+      - name: Unpack project.zip
+        run: |
+          unzip -q project.zip
+          cp -r EditorCollabV2/. .
+
       - name: Build the mod
         uses: geode-sdk/build-geode-mod@main
         with:
